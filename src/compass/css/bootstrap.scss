@@ -1,16 +1,16 @@
 @charset "UTF-8";
 
-@import "honoka/variables";
+@import "umi/variables";
 /*!
- * Honoka v#{$bootstrap-version}
- * Website: http://honokak.osaka/
- * Copyright 2015 windyakin
+ * Umi v#{$bootstrap-version}
+ * Website: https://nkmr6194.github.io/Umi
+ * Copyright 2015 SAKATA Sinji
  * The MIT License
- * Based on Bootstrap
+ * Based on Honoka which is a Bootstrap theme
  */
 // Core variables and mixins
 @import "bootstrap/mixins";
-@import "honoka/mixins";
+@import "umi/mixins";
 
 @import "bootstrap/normalize";
 @import "bootstrap/grid";
@@ -59,4 +59,4 @@
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
 
-@import "honoka/override";
+@import "umi/override";

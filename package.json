@@ -1,9 +1,9 @@
 {
-  "name": "Honoka",
+  "name": "Umi",
   "version": "0.0.0",
-  "description": "Honoka is one of the Bootstrap original theme.",
-  "author": "windyakin",
-  "website": "http://honokak.osaka/",
+  "description": "Umi is a fork of Honoka which is a Bootstrap theme.",
+  "author": "SAKATA Sinji",
+  "website": "https://nkmr6194.github.io/Umi/",
   "license": "MIT License",
   "main": "Gruntfile.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/windyakin/honoka.git"
+    "url": "https://github.com/NKMR6194/Umi.git"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

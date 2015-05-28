@@ -5,8 +5,8 @@
 @import "compass";
 @import "compass/css3";
 
-@import "honoka/variables";
-@import "honoka/mixins";
+@import "umi/variables";
+@import "umi/mixins";
 
 $brand-honoka: #FDCEA0;
 $brand-twitter: #55ACEE;
@@ -190,4 +190,3 @@ footer {
 		font-size: 24px;
 	}
 }
-
