@@ -1,29 +1,32 @@
-# Honoka
+# Umi
 
-[http://honokak.osaka/](http://honokak.osaka/)
+[https://nkmr6194.github.io/Umi/](https://nkmr6194.github.io/Umi/)
 
-![honoka](dist/assets/img/sample.png)
+![umi](dist/assets/img/sample.png)
 
-"Honoka" は日本語も美しく表示できるBootstrapテーマです。
+"Umi" は "Honoka"を元にした日本語も美しく表示できるBootstrapテーマです。
 
-## About "Honoka"
+## About "Umi"
 
 通常の[Bootstrap](http://getbootstrap.com/)では，日本語のフォント指定や文字サイズは最適とはいえません。"Honoka"はそんなBootstrapをベースに，日本語表示に適したフォント指定や，文字サイズに関するコードを追記したBootstrapテーマの一つです。
 
+"Umi"は"Honoka"に[Bootswatch Flatly](http://bootswatch.com/)の配色を適応したテーマです。
 ## Live Demo
 
-[http://honokak.osaka/bootstrap.html](http://honokak.osaka/bootstrap.html)
+[日本語](https://nkmr6194.github.io/Umi/bootstrap-jp.html)
+
+[English](https://nkmr6194.github.io/Umi/bootstrap.html)
 
 ## Usage
 
-Honokaは単なるBootstrapテーマにしか過ぎないため，基本的な使い方は本家Bootstrapとほとんど変わりません。よって以下に書くことは[本家Bootstrap](http://getbootstrap.com/getting-started/)からの引用，もしくはその一部を変更したものです。用意されたCSSクラスやコンポーネントなど，より詳細な使い方のドキュメントは本家Bootstrapの各種リファレンスページ([CSS](http://getbootstrap.com/css/) / [Components](http://getbootstrap.com/components/) / [JavaScript](http://getbootstrap.com/javascript/))をご覧になることを推奨します。
+Umiは単なるBootstrapテーマにしか過ぎないため，基本的な使い方は本家Bootstrapとほとんど変わりません。よって以下に書くことは[本家Bootstrap](http://getbootstrap.com/getting-started/)からの引用，もしくはその一部を変更したものです。用意されたCSSクラスやコンポーネントなど，より詳細な使い方のドキュメントは本家Bootstrapの各種リファレンスページ([CSS](http://getbootstrap.com/css/) / [Components](http://getbootstrap.com/components/) / [JavaScript](http://getbootstrap.com/javascript/))をご覧になることを推奨します。
 
 ### Package
 
 配布しているzipファイルの内容物は以下のとおりです。``bootstrap.min.*``といったように，ファイル名に``min``がつくファイルは，改行やインデント・スペーシングをなくした(minifyされた)コードで，ユーザがウェブページを読み込む際の転送量を少なくすることができます。通常はこの``bootstrap.min.*``を使うことをおすすめします。
 
 ```
-honoka/
+umi/
 ├─ bootstrap.html
 ├─ css/
 │   ├─ bootstrap.css
@@ -94,12 +97,16 @@ Bootstrapに関連するファイルのビルドを行います。
 grunt package
 ```
 
-配布用パッケージを作成します。作成したファイルは``data/``ディレクトリ(``.gitignore``で無視ディレクトリに指定)の``bootstrap-honoka-dist.zip``へ出力されます。
+配布用パッケージを作成します。作成したファイルは``data/``ディレクトリ(``.gitignore``で無視ディレクトリに指定)の``bootstrap-umi-dist.zip``へ出力されます。
 
 ## License
 
 [MIT Licesne](LICENSE)
 
-## Author
+## Author of "Honoka"
 
  * windyakin ([windyakin.net](http://windyakin.net/))
+
+## Editor of "Umi"
+
+ * 酒田　シンジ
