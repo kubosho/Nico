@@ -85,7 +85,7 @@ module.exports = function(grunt) {
 		compress: {
 			main: {
 				options: {
-					archive: 'data/bootstrap-umi-dist.zip'
+					archive: 'data/bootstrap-umi-'+ pkg.version +'-dist.zip'
 				},
 				files: [
 					{

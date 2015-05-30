@@ -13,13 +13,16 @@
 "Umi"は"Honoka"に[Bootswatch Flatly](http://bootswatch.com/)の配色を適応したテーマです。
 ## Live Demo
 
-[日本語](https://nkmr6194.github.io/Umi/bootstrap-jp.html)
-
-[English](https://nkmr6194.github.io/Umi/bootstrap.html)
+ * [https://nkmr6194.github.io/Umi/bootstrap-jp.html](https://nkmr6194.github.io/Umi/bootstrap-jp.html) (日本語レイアウト)
+ * [https://nkmr6194.github.io/Umi/bootstrap.html](https://nkmr6194.github.io/Umi/bootstrap.html) (英語レイアウト)
 
 ## Usage
 
-Umiは単なるBootstrapテーマにしか過ぎないため，基本的な使い方は本家Bootstrapとほとんど変わりません。よって以下に書くことは[本家Bootstrap](http://getbootstrap.com/getting-started/)からの引用，もしくはその一部を変更したものです。用意されたCSSクラスやコンポーネントなど，より詳細な使い方のドキュメントは本家Bootstrapの各種リファレンスページ([CSS](http://getbootstrap.com/css/) / [Components](http://getbootstrap.com/components/) / [JavaScript](http://getbootstrap.com/javascript/))をご覧になることを推奨します。
+Umiは単なるBootstrapテーマにしか過ぎないため，基本的な使い方は本家Bootstrapとほとんど変わりません。よって以下に書くことは[本家Bootstrap](http://getbootstrap.com/getting-started/)からの引用，もしくはその一部を変更したものです。用意されたCSSクラスやコンポーネントなど，より詳細な使い方のドキュメントは本家Bootstrapの各種リファレンスページをご覧になることを推奨します。
+
+ * [CSS](http://getbootstrap.com/css/)
+ * [Components](http://getbootstrap.com/components/)
+ * [JavaScript](http://getbootstrap.com/javascript/)
 
 ### Package
 
@@ -77,9 +80,21 @@ Bootstrapをつかってウェブページを作成する際に基本となるHT
 </html>
 ```
 
-### Grunt
+## Grunt
 
 このリポジトリはGruntを使った自動タスクによって，テストや配布用パッケージ生成することができます。
+
+### Attention
+``src/bootstrap/``以下についてはGitの[Submodule機能](https://git-scm.com/book/en/v2/Git-Tools-Submodules)を使って[twbs/bootstra-sass](https://github.com/twbs/bootstrap-sass/)(BootstrapのSASS版コード)を読み込んでいるため，ReleaseページでダウンロードできるSource Codeというアーカイブの
+中に含まれていません。よって[twbs/bootstra-sass](https://github.com/twbs/bootstrap-sass/)を直接ダウンロードしてファイルを配置する必要があります。
+
+一番いいのは，Honokaのリポジトリ自体を``git clone``し，以下のコマンドを実行することです。
+
+```
+% git submodule update --init src/bootstrap
+```
+
+### Test
 
 ```
 grunt server
@@ -87,11 +102,15 @@ grunt server
 
 テスト用サーバを起動します。``localhost:8000``に接続することで``dist/``以下のディレクトリをプレビューすることができます。また起動中にscssファイルを更新した場合，自動的にビルドされます(だがLive Reloadはされない)。
 
+### Build
+
 ```
 grunt build
 ```
 
 Bootstrapに関連するファイルのビルドを行います。
+
+### Package
 
 ```
 grunt package
