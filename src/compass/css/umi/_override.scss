@@ -53,6 +53,7 @@ a {
 }
 
 // フォント指定
+.no-thank-yu,
 .navbar,
 .btn,
 .form-control,
@@ -68,7 +69,9 @@ a {
 .label,
 .badge,
 .panel-heading,
-.lead
+.lead,
+.tooltip,
+.popover
 {
 	font-family: $font-family-sans-serif;
 }
