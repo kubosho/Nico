@@ -88,16 +88,26 @@ Bootstrapをつかってウェブページを作成する際に基本となるHT
 
 ## Grunt
 
-このリポジトリはGruntを使った自動タスクによって，テストや配布用パッケージ生成することができます。
+このリポジトリはGruntを使った自動タスクによって，テストや配布用パッケージを生成することができます。
 
 ### Attention
-``src/bootstrap/``以下についてはGitの[Submodule機能](https://git-scm.com/book/en/v2/Git-Tools-Submodules)を使って[twbs/bootstra-sass](https://github.com/twbs/bootstrap-sass/)(BootstrapのSASS版コード)を読み込んでいるため，ReleaseページでダウンロードできるSource Codeというアーカイブの
-中に含まれていません。よって[twbs/bootstra-sass](https://github.com/twbs/bootstrap-sass/)を直接ダウンロードしてファイルを配置する必要があります。
+
+#### Using Git Submodule
+
+``src/bootstrap/``以下についてはGitの[Submodule機能](https://git-scm.com/book/en/v2/Git-Tools-Submodules)を使って[twbs/bootstra-sass](https://github.com/twbs/bootstrap-sass/)(BootstrapのSass版コード)を読み込んでいるため，ReleaseページでダウンロードできるSource Codeというアーカイブの中に含まれていません。よって[twbs/bootstra-sass](https://github.com/twbs/bootstrap-sass/)を直接ダウンロードしてファイルを配置する必要があります。
 
 一番いいのは，Honokaのリポジトリ自体を``git clone``し，以下のコマンドを実行することです。
 
 ```
 % git submodule update --init src/bootstrap
+```
+
+#### Using Compass
+
+Sassコードのコンパイルに[Compass](http://compass-style.org/)の機能の一部を使用しています。よってSassとは別にコンピュータへCompassがインストールされているする必要があります。
+
+```
+% gem install compass
 ```
 
 ### Test
