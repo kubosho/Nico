@@ -1,42 +1,31 @@
 language: node_js
 
+notifications:
+  email: false
+
 node_js:
-  - '6.9'
+- '8'
 
 sudo: false
 
 cache:
   directories:
     - node_modules
-    - vendor/bundle
-
-env:
-  global:
-  - export LC_CTYPE=ja_JP.UTF-8
-  - GIT_COMMITTER_NAME=kubosho_
-  - GIT_COMMITTER_EMAIL=ta2@o2p.jp
-  - GIT_AUTHOR_NAME=kubosho_
-  - GIT_AUTHOR_EMAIL=ta2@o2p.jp
-  - secure: DxwLNpAg132iMSEYeBehynsY5lgpckk/bJx6L1btA6VbTW3lVymx02r6vRaUKM+XZmwSgoBvocBWHTcnBxtOE1JED6dj/x0wv42FXi9w/FGBt4AZehr1e+flVzJGcedmocYkUgF8fwl+zxGZl5kdyVOOQCCcFqp4JK7Fh4Fh/MzJIQJeokSJ0wjCo6doPAAwdeh9rfKCReIJ8AZ3Z8OLqm1r44QNOOzj4tdZUIBfgqkfrtDPZVsWp8Wi3KUF9TXObUd3QZUf/Gaw9o7YmOs56zT24iTLaS+j2cokz1WaA5V6tlfRwQNsMh+kAARxDjfnk3qUGVkIue73oLYcKU1t1ueoTd8bUTtClPdCYrBmyE253b71nGez6NBKndhDhHFY3B6w9wKAsD2w7UBi1ksmgSt7GtdqXg/IXAMagnZ+jo5A0V0MHyGnLVnjnPtH/yk9BueEgZPAFe7DnQW7B3xV+3jOLFhAX//dKIvTnduccMkiYix/6c5LL9GCx6vSmoJFZZtnHSi1XhycadDV+D2YPov7biusoRyYkl+cPRfShcwP/nsOZx5V9gX/giZSKGg0sd8VXqb/PRVui+3OkzqgM8nJwGQGbPeQooW7HAM/vIuD1E8Pv4jTjIeYMaqvEFhKKJk/au2/hE9hPd+NLNfk4/kEh6UzotTFEToX3TjbSgQ=
 
 git:
   submodules: false
 
-before_install:
-  - rvm install 2.3.0
-  - rvm use 2.3.0 --fuzzy
-  - export GEMDIR=$(rvm gemdir)
-  - ruby --version
-  - gem --version
-  - gem install bundler --quiet --no-ri --no-rdoc
-  - bundle --version
-  - bundle install --without documentation --path vendor/bundle
-  - npm install -g grunt-cli
-  - grunt --version
-
 script:
-- npm start
+  - npm test
+  - npm start
 
-after_success:
-- '[ "$TRAVIS_BRANCH" == "master" ] && [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [
-  "$GH_TOKEN" ] && ./.bin/deploy-to-gh-pages.sh > /dev/null'
+deploy:
+  provider: npm
+  email: $NPM_EMAIL
+  api_key: $NPM_API_KEY
+  on:
+    tags: true
+
+env:
+  global:
+    secure: nzmJ46f1Y7/dcaw36lGKiZI8O7Tn1VH/t/ElBIAsBKxTkvDp+xZVyW8u/9BbYzb1hCm/K/FiAmAyiaXA1lC9YOn9gv0Vrvp5enSzf0OozS+8QwXpFY3HsAA+nt23H/M8+JD+B8Efrid8CeS7iALDs+I/fSzPcEBSOH1f08s5Jy1NFkMsZbXelDKUSUUMghns6XZvEhNlOX2JN2UjcZ4cTZlVt09gPNFAxi67Y7qQ2jr4VbXRuRTVxMysq9Zphe3lMgaoYmPck3Ib1B5sFfLOAuyewP3L11vg3hYYLCn08/389Ivr8YmI2EMhXe2AfHcw12tMJPZzxHHSKj6gKIaK77aTdnd5hbLwUdAmd7KHpvUFDVXiyw8H6BkvbxCir93FTjOjFFf2kDBa4Dfey5ogoeOhrOObro5DKYeicwYeWTY8F/5XxM3XaWdX0BY0HgDPfFENivl6p4sY7oFlmVeam3S6dOmRvbIBO/oqZbkIZ0t6zyLj5kYB/G6+mC8djCdg9eeeMaA3yEZrNHoiRLJQ4agM8oS57kLiG8OuZczSjni+vrL0ai967ckBgo9pX0QqoTzgFUn3cp87pl6sAMuga/ZXUIsa0gMt7yU0MUDVGkGWJQUrPgo7+I3fOwX3kh5Wv6UtCZwXV4nDx20QzZxgkkZZ4Me9iMiULz+3JhF99Hk=

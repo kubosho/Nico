@@ -7,7 +7,6 @@ bower_components/
 # My Original Set
 #=============================================
 data/
-build/
 
 #=============================================
 # node.js & Grunt
@@ -39,9 +38,4 @@ vendor/bundle/
 *.stTheme.cache
 
 sftp-config.json
-npm-debug.log
 
-#=============================================
-# Jetbrains
-#=============================================
-.idea
