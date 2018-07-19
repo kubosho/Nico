@@ -5,6 +5,7 @@ const Del = require('del');
 const RunSequence = require('run-sequence');
 const BrowserSync = require('browser-sync').create();
 
+const PACKAGE_NAME = 'nico';
 const PackageJSON = JSON.parse(Fs.readFileSync('./package.json'));
 
 const BANNER = `/*!
@@ -144,7 +145,7 @@ Gulp.task('packing', () => {
       // FIXME: gulp-rename の仕様により引数代入を許可する
       /* eslint-disable no-param-reassign */
       path.dirname = path.dirname.replace(/^(?:dist|docs)/, '');
-      path.dirname = `honoka/${path.dirname}`;
+      path.dirname = `${PACKAGE_NAME}/${path.dirname}`;
       /* eslint-enable no-param-reassign */
     }))
     .pipe(Plugins.zip(`bootstrap-${PackageJSON.config.packageName.toLowerCase()}-${PackageJSON.version}-dist.zip`))
