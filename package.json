@@ -1,13 +1,13 @@
 {
-  "name": "bootstrap-honoka",
+  "name": "bootstrap-nico",
   "version": "4.0.0",
-  "description": "Honoka is one of the Bootstrap original theme.",
-  "author": "windyakin",
-  "website": "http://honokak.osaka/",
+  "description": "Nico a fork of Honoka which is a Bootstrap theme.",
+  "author": "kubosho",
+  "website": "https://nico.kubosho.com",
   "config": {
-    "packageName": "Honoka",
+    "packageName": "Nico",
     "projectStartYear": "2015",
-    "licenseUrl": "https://github.com/windyakin/Honoka/blob/master/LICENSE"
+    "licenseUrl": "https://github.com/kubosho/Nico/blob/master/LICENSE"
   },
   "keywords": [
     "css",
@@ -29,7 +29,7 @@
   "style": "dist/css/bootstrap.css",
   "repository": {
     "type": "git",
-    "url": "https://github.com/windyakin/honoka.git"
+    "url": "https://github.com/kubosho/Nico.git"
   },
   "dependencies": {
     "bootstrap": "4.0.0",
