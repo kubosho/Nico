@@ -18,11 +18,19 @@
 * [//nico.kubosho.com/bootstrap-ja.html](http://nico.kubosho.com/bootstrap-ja.html) (日本語レイアウト)
 * [//nico.kubosho.com/bootstrap.html](http://nico.kubosho.com/bootstrap.html) (英語レイアウト)
 
-## Getting Started
-
-### Download
+## Download
 
 [Releases](https://github.com/kubosho/Nico/releases/latest)から最新版をダウンロードしてください。
+
+### npm
+
+Node.js のパッケージ管理システムである、 [npm](https://npmjs.com) で [公開されています](https://www.npmjs.com/package/bootstrap-nico)。 [webpack](https://webpack.js.org/) など、npmを利用したmodule bundlerでご利用ください。
+
+```
+npm install --save bootstrap-nico
+```
+
+パッケージ名が「**bootstrap-**nico」であることに注意してください。
 
 ## Usage
 
