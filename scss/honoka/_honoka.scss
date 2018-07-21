@@ -4,7 +4,7 @@
 @import "bootstrap/scss/functions";
 
 // Honoka variables
-@import "honoka/variables";
+@import "./variables";
 
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
@@ -46,4 +46,4 @@
 @import "bootstrap/scss/print";
 
 // Honoka original setting
-@import "honoka/override";
+@import "./override";
