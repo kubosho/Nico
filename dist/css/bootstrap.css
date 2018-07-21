@@ -8618,6 +8618,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .bg-light {
+  /* stylelint-disable-next-line declaration-no-important */
   background-color: #ffe4f2 !important;
 }
 
@@ -8657,6 +8658,11 @@ a.text-dark:hover, a.text-dark:focus {
 
 .navbar .nav-item.active .nav-link::before {
   width: 100%;
+}
+
+.navbar-dark.bg-primary {
+  /* stylelint-disable selector-max-class */
+  /* stylelint-enable */
 }
 
 .navbar-dark.bg-primary .navbar-brand,
