@@ -14,7 +14,7 @@
     "lovelive"
   ],
   "author": "kubosho",
-  "homepage": "http:http://nico.kubosho.com",
+  "homepage": "https://nico.kubosho.com",
   "repository": {
     "type": "git",
     "url": "git://github.com/kubosho/Nico.git"
@@ -25,23 +25,14 @@
     "dist/css/bootstrap.min.css"
   ],
   "ignore": [
+    "build",
+    "docs",
+    "scss",
     "/.*",
-    "dist/assets",
-    "dist/*.html",
-    "src",
     "CNAME"
   ],
   "dependencies": {},
   "devDependencies": {
-    "bootstrap": "3.3.7",
-    "bootstrap-sass": "3.3.7"
-  },
-  "exportsOverride": {
-    "bootstrap-sass": {},
-    "bootstrap": {
-      "js": "dist/js/bootstrap.**js",
-      "fonts": "dist/fonts/**/*"
-    },
-    "jquery": {}
+    "bootstrap": "4.0.0"
   }
 }
