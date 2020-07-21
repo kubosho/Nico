@@ -5,6 +5,8 @@
 
 // Honoka variables
 @import "./variables";
+// Nico variables
+@import "./variables_nico";
 
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
@@ -47,3 +49,6 @@
 
 // Honoka original setting
 @import "./override";
+
+// Nico original setting
+@import "./override_nico";
