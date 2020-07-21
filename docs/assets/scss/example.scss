@@ -8,17 +8,28 @@
 // @import "bootstrap/scss/variables";
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
+<<<<<<< HEAD
 // @import "nico/mixins";
 
 // stylelint-disable
 $brand-download: #007ded;
+=======
+// @import "honoka/mixins";
+
+// stylelint-disable
+$brand-honoka:   #ff9800;
+>>>>>>> upstream/master
 $brand-twitter:  #55acee;
 $brand-facebook: #3b5998;
 $brand-hatena:   #178fde;
 
 $brand-colors: ();
 $brand-colors: map-merge((
+<<<<<<< HEAD
   "download": $brand-download,
+=======
+  "honoka":   $brand-honoka,
+>>>>>>> upstream/master
   "twitter":  $brand-twitter,
   "facebook": $brand-facebook,
   "hatena":   $brand-hatena
@@ -84,17 +95,29 @@ $brand-colors: map-merge((
   min-height: 530px;
   margin-bottom: 0;
   overflow: hidden;
+<<<<<<< HEAD
   background-color: $primary;
+=======
+  background-color: lighten($brand-honoka, 30%);
+>>>>>>> upstream/master
   background-image: url("../img/circle.png");
   background-repeat: no-repeat;
   background-position: -35% center;
   background-size: 70%;
+<<<<<<< HEAD
   .nico {
+=======
+  .honoka {
+>>>>>>> upstream/master
     position: absolute;
     bottom: -1 * ($jumbotron-padding * 2 + $spacer);
     left: 0;
     width: 400px;
     height: 530px;
+<<<<<<< HEAD
+=======
+    background-image: url("../img/honoka.png");
+>>>>>>> upstream/master
     background-repeat: no-repeat;
   }
   .outline {
@@ -122,7 +145,11 @@ $brand-colors: map-merge((
     background-color: $body-bg;
   }
   &.section-inverse {
+<<<<<<< HEAD
     background-color: lighten($primary, 45%);
+=======
+    background-color: lighten($brand-honoka, 45%);
+>>>>>>> upstream/master
   }
   .subtitle {
     margin-bottom: $spacer;

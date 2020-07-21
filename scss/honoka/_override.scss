@@ -4,7 +4,7 @@
   .nav-item {
     .nav-link {
       position: relative;
-      margin-right: $spacer * 0.5;
+      margin-right: $spacer * .5;
       &::before {
         position: absolute;
         right: 0;
@@ -15,7 +15,7 @@
         content: "";
         border-bottom-style: solid;
         border-bottom-width: 1px;
-        transition: width 0.2s;
+        transition: width .2s;
       }
       @include hover-focus {
         &::before {
