@@ -1,39 +1,32 @@
 @charset "UTF-8";
 
 // $spacer: 1rem;
-@import "bootstrap/scss/functions";
-@import "honoka/variables";
-@import "bootstrap/scss/mixins";
-@import "bootstrap/scss/buttons";
+@import 'bootstrap/scss/functions';
+@import 'honoka/variables';
+@import 'honoka/variables_nico';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/buttons';
 // @import "bootstrap/scss/variables";
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
-<<<<<<< HEAD
-// @import "nico/mixins";
-
-// stylelint-disable
-$brand-download: #007ded;
-=======
 // @import "honoka/mixins";
 
 // stylelint-disable
-$brand-honoka:   #ff9800;
->>>>>>> upstream/master
-$brand-twitter:  #55acee;
+$brand-honoka: #ff9800;
+$brand-twitter: #55acee;
 $brand-facebook: #3b5998;
-$brand-hatena:   #178fde;
+$brand-hatena: #178fde;
 
 $brand-colors: ();
-$brand-colors: map-merge((
-<<<<<<< HEAD
-  "download": $brand-download,
-=======
-  "honoka":   $brand-honoka,
->>>>>>> upstream/master
-  "twitter":  $brand-twitter,
-  "facebook": $brand-facebook,
-  "hatena":   $brand-hatena
-), $brand-colors);
+$brand-colors: map-merge(
+  (
+    'honoka': $brand-honoka,
+    'twitter': $brand-twitter,
+    'facebook': $brand-facebook,
+    'hatena': $brand-hatena,
+  ),
+  $brand-colors
+);
 // stylelint-enable
 
 @each $color, $value in $brand-colors {
@@ -55,8 +48,8 @@ $brand-colors: map-merge((
   display: inline-block;
   width: 1.5rem;
   height: 1.1rem;
-  content: "";
-  background-image: url("../img/hatebu.svg");
+  content: '';
+  background-image: url('../img/hatebu.svg');
   background-size: 100% 100%;
 }
 
@@ -95,29 +88,18 @@ $brand-colors: map-merge((
   min-height: 530px;
   margin-bottom: 0;
   overflow: hidden;
-<<<<<<< HEAD
-  background-color: $primary;
-=======
   background-color: lighten($brand-honoka, 30%);
->>>>>>> upstream/master
-  background-image: url("../img/circle.png");
+  background-image: url('../img/circle.png');
   background-repeat: no-repeat;
   background-position: -35% center;
   background-size: 70%;
-<<<<<<< HEAD
-  .nico {
-=======
   .honoka {
->>>>>>> upstream/master
     position: absolute;
     bottom: -1 * ($jumbotron-padding * 2 + $spacer);
     left: 0;
     width: 400px;
     height: 530px;
-<<<<<<< HEAD
-=======
-    background-image: url("../img/honoka.png");
->>>>>>> upstream/master
+    background-image: url('../img/honoka.png');
     background-repeat: no-repeat;
   }
   .outline {
@@ -145,11 +127,7 @@ $brand-colors: map-merge((
     background-color: $body-bg;
   }
   &.section-inverse {
-<<<<<<< HEAD
-    background-color: lighten($primary, 45%);
-=======
     background-color: lighten($brand-honoka, 45%);
->>>>>>> upstream/master
   }
   .subtitle {
     margin-bottom: $spacer;
@@ -168,7 +146,7 @@ $brand-colors: map-merge((
       width: $point-circle-size;
       height: $point-circle-size;
       margin: 0 auto;
-      font-size: $point-circle-size * .6;
+      font-size: $point-circle-size * 0.6;
       line-height: $point-circle-size;
       color: #fff;
       border-radius: 100%;
@@ -199,7 +177,7 @@ $brand-colors: map-merge((
 
 .icon-jp::before {
   font-weight: 700;
-  content: "あ";
+  content: 'あ';
 }
 
 .getting-started {
@@ -231,12 +209,12 @@ h3 .package-system-logo {
   }
   .featured-list {
     a {
-      opacity: .7;
-      transition: opacity .2s;
+      opacity: 0.7;
+      transition: opacity 0.2s;
       &:hover,
       &:active,
       &:focus {
-        opacity: .5;
+        opacity: 0.5;
       }
     }
     li {
@@ -247,11 +225,11 @@ h3 .package-system-logo {
 
 .card {
   > a {
-    transition: opacity .2s;
+    transition: opacity 0.2s;
     &:hover,
     &:active,
     &:focus {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 }
