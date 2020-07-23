@@ -822,16 +822,6 @@ input[type="button"].btn-block {
   background-size: 70%;
 }
 
-.jumbotron.special .honoka {
-  position: absolute;
-  bottom: -5rem;
-  left: 0;
-  width: 400px;
-  height: 530px;
-  background-image: url("../img/honoka.png");
-  background-repeat: no-repeat;
-}
-
 .jumbotron.special .outline {
   position: relative;
 }

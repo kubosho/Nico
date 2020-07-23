@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+$brand-honoka: #ff92cb;
+
+.jumbotron.special {
+  background-color: lighten($brand-honoka, 10%);
+}
+
+.btn-download {
+  border-color: #007ded;
+  background-color: #007ded;
+  color: #fff;
+}
+
+.section {
+  &.section-inverse {
+    background-color: lighten($brand-honoka, 20%);
+  }
+}

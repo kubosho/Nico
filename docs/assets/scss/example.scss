@@ -93,15 +93,6 @@ $brand-colors: map-merge(
   background-repeat: no-repeat;
   background-position: -35% center;
   background-size: 70%;
-  .honoka {
-    position: absolute;
-    bottom: -1 * ($jumbotron-padding * 2 + $spacer);
-    left: 0;
-    width: 400px;
-    height: 530px;
-    background-image: url('../img/honoka.png');
-    background-repeat: no-repeat;
-  }
   .outline {
     position: relative;
   }
