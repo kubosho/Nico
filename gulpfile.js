@@ -2,10 +2,8 @@ const Gulp = require('gulp');
 const Plugins = require('gulp-load-plugins')();
 const Fs = require('fs');
 const Del = require('del');
-const RunSequence = require('run-sequence');
 const BrowserSync = require('browser-sync').create();
 
-const PACKAGE_NAME = 'nico';
 const PackageJSON = JSON.parse(Fs.readFileSync('./package.json'));
 
 const BANNER = `/*!
@@ -21,10 +19,6 @@ const BANNER = `/*!
  */
 `;
 
-Gulp.task('default', (resolve) => {
-  return RunSequence('build', resolve);
-});
-
 Gulp.task('gulp:lint', () => {
   return Gulp.src(['gulpfile.js'])
     .pipe(Plugins.eslint({ useEslintrc: true }))
@@ -36,10 +30,10 @@ Gulp.task('js:clean', () => {
   return Del(['dist/js/**/*']);
 });
 
-Gulp.task('js:copy', ['js:clean'], () => {
+Gulp.task('js:copy', Gulp.series('js:clean', () => {
   return Gulp.src(['bootstrap/dist/js/**/*.js'], { cwd: 'node_modules' })
     .pipe(Gulp.dest('dist/js'));
-});
+}));
 
 Gulp.task('css:clean', () => {
   return Del(['dist/css/**/*']);
@@ -48,6 +42,7 @@ Gulp.task('css:clean', () => {
 Gulp.task('css:lint', () => {
   return Gulp.src(['scss/**/*.scss'])
     .pipe(Plugins.stylelint({
+      configFile: '.stylelintrc',
       failAfterError: true,
       reporters: [
         { formatter: 'verbose', console: true },
@@ -145,7 +140,7 @@ Gulp.task('packing', () => {
       // FIXME: gulp-rename の仕様により引数代入を許可する
       /* eslint-disable no-param-reassign */
       path.dirname = path.dirname.replace(/^(?:dist|docs)/, '');
-      path.dirname = `${PACKAGE_NAME}/${path.dirname}`;
+      path.dirname = `honoka/${path.dirname}`;
       /* eslint-enable no-param-reassign */
     }))
     .pipe(Plugins.zip(`bootstrap-${PackageJSON.config.packageName.toLowerCase()}-${PackageJSON.version}-dist.zip`))
@@ -159,45 +154,46 @@ Gulp.task('docs:serve', () => {
   });
 });
 
+Gulp.task('docs:reload', () => {
+  BrowserSync.reload();
+});
+
 Gulp.task('watch', () => {
-  const message = (ev) => {
-    console.log(`File: ${ev.path} was ${ev.type}, running tasks...`);
-  };
-  Gulp.watch(['scss/**/*'], () => { RunSequence('css', 'docs:copy'); })
-    .on('change', message);
-  Gulp.watch(['docs/**/*.html'])
-    .on('change', message)
-    .on('change', BrowserSync.reload);
-  Gulp.watch(['docs/assets/scss/**/*.scss'], ['docs:css'])
-    .on('change', message);
+  Gulp.watch(['scss/**/*'], Gulp.series('css', 'docs:copy', 'docs:reload'));
+  Gulp.watch(['docs/**/*.html'], Gulp.series('docs:reload'));
+  Gulp.watch(['docs/assets/scss/**/*.scss'], Gulp.series('docs:css', 'docs:reload'));
 });
 
-Gulp.task('docs', (resolve) => {
-  return RunSequence('docs:clean', 'docs:copy', 'docs:css', resolve);
-});
+Gulp.task('docs', Gulp.series(
+  'docs:clean', 'docs:copy', 'docs:css',
+));
 
-Gulp.task('serve', ['docs:serve', 'watch']);
+Gulp.task('serve', Gulp.parallel(
+  'docs:serve', 'watch',
+));
 
-Gulp.task('clean', (resolve) => {
-  return RunSequence(['css:clean', 'js:clean'], resolve);
-});
+Gulp.task('clean', Gulp.series(
+  'css:clean', 'js:clean',
+));
 
-Gulp.task('css', (resolve) => {
-  return RunSequence('css:build', 'css:minify', 'css:banner', resolve);
-});
+Gulp.task('css', Gulp.series(
+  'css:build', 'css:minify', 'css:banner',
+));
 
-Gulp.task('js', (resolve) => {
-  return RunSequence('js:copy', resolve);
-});
+Gulp.task('js', Gulp.series(
+  'js:copy',
+));
 
-Gulp.task('test', (resolve) => {
-  return RunSequence('css:lint', 'gulp:lint', resolve);
-});
+Gulp.task('test', Gulp.series(
+  'css:lint', 'gulp:lint',
+));
 
-Gulp.task('build', (resolve) => {
-  return RunSequence('clean', ['css', 'js'], ['docs'], resolve);
-});
+Gulp.task('build', Gulp.series(
+  'clean', Gulp.parallel('css', 'js'), 'docs',
+));
 
-Gulp.task('release', (resolve) => {
-  return RunSequence('build', 'packing', resolve);
-});
+Gulp.task('release', Gulp.series(
+  'build', 'packing',
+));
+
+Gulp.task('default', Gulp.parallel('build'));
