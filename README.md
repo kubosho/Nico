@@ -1,11 +1,9 @@
 # Nico
 
 [![Build Status by Travis CI](https://travis-ci.org/kubosho/Nico.svg?branch=master)](https://travis-ci.org/kubosho/Nico)
-[![Build status by AppVeyor](https://ci.appveyor.com/api/projects/status/6j4y6bugti7f1aff/branch/master?svg=true)](https://ci.appveyor.com/project/windyakin/honoka/branch/master)
-[![devDependency Status](https://david-dm.org/kubosho/Nico/dev-status.svg)](https://david-dm.org/windyakin/Honoka#info=devDependencies)
+[![devDependency Status](https://david-dm.org/kubosho/Nico/dev-status.svg)](https://david-dm.org/kubosho/Nico#info=devDependencies)
 [![The MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![npm](https://img.shields.io/npm/v/bootstrap-honoka.svg)](https://www.npmjs.com/package/bootstrap-honoka)
-[![Join the chat at https://gitter.im/bootstrap-honoka/Lobby](https://badges.gitter.im/bootstrap-honoka/Lobby.svg)](https://gitter.im/bootstrap-honoka/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![npm](https://img.shields.io/npm/v/bootstrap-nico.svg)](https://www.npmjs.com/package/bootstrap-nico)
 
 "Nico"は"[Honoka](https://github.com/windyakin/Honoka)"を元にした、日本語も美しく表示できる Bootstrap テーマです。
 
